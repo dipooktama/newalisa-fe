@@ -22,5 +22,6 @@
   ];
 </script>
 
-
-<Accordion items={defaultItems} />
+<section class="h-64 w-full">
+  <Accordion items={defaultItems} />
+</section>
