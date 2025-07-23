@@ -6,8 +6,11 @@
 	import { page } from '$app/state';
 
 	console.log(page.url.pathname)
-	console.log(page.url.pathname === "chats")
-	let aok = page.url.pathname === "chats" ? NavChats : NavGeneral
+	console.log(page.url.pathname === "/chats")
+	let currentPage = $state(page.url.pathname)
+	let aok = $derived(currentPage === "/chats" ? NavChats : NavGeneral)
+	$inspect(currentPage)
+	$inspect(aok)
 
 	let { children} = $props();
 </script>
