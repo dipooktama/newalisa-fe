@@ -19,6 +19,8 @@
 </script>
 
 <div class="flex bg-gray-100 dark:bg-gray-900 font-sans">
-	<Sidebar header="ALISA" footer="Beranda" content={Navs.items}></Sidebar>
+	{#if page.url.pathname !== "/"}
+		<Sidebar header="ALISA" footer="Beranda" content={Navs.items}></Sidebar>
+	{/if}
 	{@render children()}
 </div>
