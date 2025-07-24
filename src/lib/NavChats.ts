@@ -1,4 +1,4 @@
-import type { NavLinks } from "$lib/components/Sidebar.svelte";
+import type { NavLinks } from "./types/NavLinks"
 
 export const NavChats: NavLinks[] = [
     {
