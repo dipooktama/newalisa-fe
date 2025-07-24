@@ -31,7 +31,7 @@ export async function load({url, cookies, fetch}) {
     // console.log("nih4")
     
     const user = await fetchApi('/user/me', 'GET', {}, ssotok);
-    console.log(user)
+    // console.log(user)
 
     if(user.data) {
         responseSso.detail = keysToCamel(user.data);

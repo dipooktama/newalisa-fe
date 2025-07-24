@@ -35,7 +35,7 @@ export const handle: Handle = async ({ event, resolve}) => {
                 const user = await res.json()
                 // console.log(user)
                 // event.locals.user = user;
-                console.log("SOKSESS")
+                // console.log("SOKSESS")
                 return resolve(event)
             }
         } catch(e) {
