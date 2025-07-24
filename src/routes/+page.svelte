@@ -1,26 +1,32 @@
 <script lang="ts">
-    import Accordion, { type AccordionItem } from "$lib/components/Accordion.svelte";
-    const defaultItems: AccordionItem[] = [
+    import Cards from "$lib/components/Cards.svelte";
+    const cardItems = [
     {
-      value: "item-1",
-      title: "What is Bits UI?",
+      value: "/chats",
+      title: "Obrolan",
       content:
-        "Bits UI is a headless component library for Svelte, providing unstyled, accessible building blocks for creating your own custom-styled component library.",
+        "Berdiskusi dengan ALISA.",
     },
     {
-      value: "item-2",
-      title: "How do I style the components?",
+      value: "/chats",
+      title: "Rancangan Mata Kuliah",
       content:
-        "You can style the components using standard class props with frameworks like Tailwind CSS, or by targeting the data-* attributes that each component part has.",
+        "Membuat rancangan mata kuliah dengan ALISA.",
     },
     {
-      value: "item-3",
-      title: "Is it accessible?",
+      value: "/chats",
+      title: "Konten Mata Kuliah",
       content:
-        "Yes. Accessibility is a primary focus. Bits UI components follow WAI-ARIA design patterns, ensuring they are accessible to all users, including those using screen readers.",
+        "Membuat rancangan konten perkuliahan berbasis permainan atau video.",
     },
   ];
 </script>
 
 
-<Accordion items={defaultItems} />
+<section class="h-screen w-full">
+    <div class="flex flex-row justify-center mt-auto p-4 gap-4">
+        {#each cardItems as item }
+            <Cards href={item.value} title={item.title} description={item.content} />
+        {/each}
+    </div>
+</section>
