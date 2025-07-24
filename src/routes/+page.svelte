@@ -1,5 +1,6 @@
 <!--This page should be a landing page-->
 <script lang="ts">
+  import '../app.css'
   const text = "COMING SOON"
 </script>
 
