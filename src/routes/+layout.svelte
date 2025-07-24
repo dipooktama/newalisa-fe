@@ -1,18 +1,24 @@
 <script lang="ts">
 	import '../app.css';
 	import Sidebar from '$lib/components/Sidebar.svelte';
-	import { NavChats } from './chats/NavChats';
-	import { NavGeneral } from './NavGeneral';
+	import { NavChats } from '../lib/NavChats';
+	import { Navs } from '../lib/NavGeneral.svelte';
 	import { page } from '$app/state';
 
-	console.log(page.url.pathname)
-	console.log(page.url.pathname === "/chats")
-	let currentPage = $state(page.url.pathname)
-	let aok = $derived(currentPage === "/chats" ? NavChats : NavGeneral)
-	$inspect(currentPage)
-	$inspect(aok)
-
 	let { children} = $props();
+	$effect(() => {
+		$inspect(page.url.pathname)
+		$inspect(Navs.items)
+		if(page.url.pathname === "/chats") {
+			Navs.setItems = NavChats
+		} else {
+			Navs.reset()
+		}
+		$inspect(Navs.items)
+	})
 </script>
 
-<Sidebar header="ALISA" footer="Beranda" content={aok} main={children}></Sidebar>
+<div class="flex bg-gray-100 dark:bg-gray-900 font-sans">
+	<Sidebar header="ALISA" footer="Beranda" content={Navs.items}></Sidebar>
+	{@render children()}
+</div>
