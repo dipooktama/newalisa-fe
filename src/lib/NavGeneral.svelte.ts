@@ -3,11 +3,19 @@ export function createNavs() {
     const NavGeneral: NavLinks[] = [
         {
             link: "/home",
-            text: "home"
+            text: "Beranda"
         },
         {
             link: "/chats",
-            text: "chats"
+            text: "Obrolan"
+        },
+        {
+            link: "/course-structures",
+            text: "Struktur Matkul"
+        },
+        {
+            link: "/course-contents",
+            text: "Konten Matkul"
         }
     ]
     let items = $state(NavGeneral)
